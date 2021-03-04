@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Header from '../components/Header.vue'
 import Login from '../components/Login.vue'
+import Reg from '../components/Reg'
 
 
 Vue.use(VueRouter);
@@ -17,6 +18,11 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login
+},
+{
+    path: "/reg",
+    name: "Reg",
+    component: Reg
 }
 ]
 
