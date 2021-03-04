@@ -2,13 +2,13 @@
     <div className="reg">
     <form>
        <input
-        className="reg-input"
+        className="login-input"
         type="text"
         name="username"
         placeholder="username"
         />
        <input
-       className="reg-input"
+       className="login-input"
        type="text"
        name="password"
        placeholder="password"  

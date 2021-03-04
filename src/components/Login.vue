@@ -6,6 +6,7 @@
         type="text"
         name="username"
         placeholder="username"
+        
         />
        <input
        className="login-input"
@@ -13,7 +14,7 @@
        name="password"
        placeholder="password"  
        />
-       <button className="login-button">Login</button>
+       <button v-on:click= "handleLogin" className="login-button">Login</button>
        
    </form>
 </div>
