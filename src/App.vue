@@ -4,6 +4,7 @@
     <router-link to="/">Header</router-link>
     <router-link to="/login">Login</router-link>
     <router-link to="/reg">Registration</router-link>
+    <router-link to="/routines">Routines</router-link>
     </div>
       <router-view />
   </div>

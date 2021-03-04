@@ -1,5 +1,6 @@
 <template>
-<div className="reg">
+<div className="nologin" v-if="!loggedin">
+<div className="login">
    <form @submit.prevent="handleSubmit">
        <input
         className="login-input"
@@ -15,27 +16,32 @@
        placeholder="password"
        v-model="createPW"  
        />
-      <button className="login-button">Login</button>
+      <button type="handleSubmit">Login</button>
        
-   </form>
+        </form>
+    </div>
+    <div className="login" v-if="loggedin">
+        <router-link to="/routines">Routines</router-link>
+       
 </div>
+</div>
+
 </template>
 
 
 <script>
-    import axios from 'axios'
-
-
     export default {
     name: 'Login',
     data() {
         return {
-            login: false,
+            loggedin: false,
             JWT: "",
             createUN: "",
             createPW: "",
             devURL: "http://localhost:3000",
-            prodURL: null
+            prodURL: null,
+            user: null,
+            token: null
         }
     },
     methods: {
@@ -54,8 +60,12 @@
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        this.user = data.user
+        this.token = data.token
+        this.loggedin = true
       })
+
+      
       
     }
   }
