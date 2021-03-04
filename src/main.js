@@ -8,28 +8,32 @@ new Vue({
   router,
   render: function (h) { return h(App) },
   data: {
-    loggedin: false,
+    login: false,
     JWT: "",
     createUN: "",
     createPW: "",
-    devURL: "https://fitness-tracker-tl.herokuapp.com/sessions",
+    devURL: "http://localhost:3000",
     prodURL: null
   },
   methods: {
-    handleLogin: function() {
+    handleLogin: function(event) {
+      event.preventDefault()
       const URL = this.prodURL ? this.prodURL : this.devURL
+      console.log(URL)
       const user = {username: this.createUN, password: this.createPW}
-      fetch(`${URL/login}`, {
-        method: "post",
+      console.log(user)
+        fetch(`${URL}/login`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify
+        body: JSON.stringify(user)
       })
       .then(response => response.json())
       .then(data => {
         console.log(data)
       })
+      
     }
   }
 }).$mount('#app')
