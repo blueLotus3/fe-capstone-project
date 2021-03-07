@@ -2,6 +2,7 @@
 <div className="nologin" v-if="!loggedin">
 <div className="login">
    <form @submit.prevent="handleSubmit">
+     
        <input
         className="login-input"
         type="text"
@@ -17,13 +18,12 @@
        v-model="createPW"  
        />
        
-      <button type="handleSubmit">Login</button> 
-       
-       
+      <button  type="handleSubmit">Login</button> 
+      
         </form>
     </div>
     <div className="login" v-if="loggedin">
-        <router-link to="/routines">Routines</router-link>
+       <h3>WHERES THE USER</h3>
        
 </div>
 </div>
@@ -40,7 +40,7 @@
             JWT: "",
             createUN: "",
             createPW: "",
-            devURL: "https://fitness-tracker-tl.herokuapp.com",
+            devURL: "https://fitness-tracker-tl.herokuapp.com/",
             prodURL: null,
             user: null,
             token: null
@@ -65,6 +65,8 @@
         this.user = data.user
         this.token = data.token
         this.loggedin = true
+        localStorage.setItem('jwt', data.token)
+       
       })
 
       
