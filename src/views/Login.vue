@@ -16,7 +16,9 @@
        placeholder="password"
        v-model="createPW"  
        />
-      <button type="handleSubmit">Login</button>
+       
+      <button type="handleSubmit">Login</button> 
+       
        
         </form>
     </div>
@@ -38,7 +40,7 @@
             JWT: "",
             createUN: "",
             createPW: "",
-            devURL: "http://localhost:3000",
+            devURL: "https://fitness-tracker-tl.herokuapp.com",
             prodURL: null,
             user: null,
             token: null

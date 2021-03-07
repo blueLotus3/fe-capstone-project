@@ -22,7 +22,7 @@
         <li>{{exercises.results[16].name}}</li>
         <li>{{exercises.results[17].name}}</li>
         <li>{{exercises.results[18].name}}</li>
-        <li>{{exercises.results[19].name}}</li>
+        <li>{{exercises.results[19].name}}</li>   
         </ul>
     </div>
     </div>
@@ -36,6 +36,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Login from './Login'
 
 Vue.use(VueAxios, axios)
 export default {
