@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Header from '../components/Header.vue'
-import Login from '../components/Login.vue'
-import Reg from '../components/Reg'
-import Routines from '../components/Routines'
+import Header from '../views/Header.vue'
+import Login from '../views/Login.vue'
+import Reg from '../views/Reg'
+import Routines from '../views/Routines'
 
 
 Vue.use(VueRouter);
