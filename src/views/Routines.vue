@@ -2,8 +2,9 @@
     <div className="routines">
         <h1>Hello, User</h1>
     <div className="exercises-data">
-        <ul>
-        <li>{{exercises.results[0].name}}</li>
+        <button @click="toggleVisibility">Create Routine</button>
+        <ul className="exercises-list" v-show="isVisible">        
+        <li>{{exercises.results[0].name}}</li>        
         <li>{{exercises.results[1].name}}</li>
         <li>{{exercises.results[2].name}}</li>
         <li>{{exercises.results[3].name}}</li>
@@ -22,10 +23,15 @@
         <li>{{exercises.results[16].name}}</li>
         <li>{{exercises.results[17].name}}</li>
         <li>{{exercises.results[18].name}}</li>
-        <li>{{exercises.results[19].name}}</li>   
-        </ul>
+        <li>{{exercises.results[19].name}}</li>
+           
+        </ul>    
+    </div>
+    <div className="saved-routines"> 
+        <h3>this is saved routines</h3><hr>
     </div>
     </div>
+
     
 </template>
 
@@ -38,12 +44,15 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Login from './Login'
 
+
 Vue.use(VueAxios, axios)
 export default {
     name: 'Routines',
     data() {
         return {
-            exercises: []
+            exercises: {},
+            isVisible: false,
+            
         }
     },
     mounted() {
@@ -51,8 +60,14 @@ export default {
         axios.get(`https://wger.de/api/v2/exercise/`)
         .then(res => {this.exercises = res.data}    
         ).catch(error => console.log(error))
-    }  
-
+    },
+    methods: {
+        toggleVisibility() {
+            this.isVisible = !this.isVisible
+        }
+    }
+ 
+    
 
 }
 </script>
@@ -60,5 +75,8 @@ export default {
 
 
 <style scoped>
+/* .exercises-list {
+    
+} */
 
 </style>

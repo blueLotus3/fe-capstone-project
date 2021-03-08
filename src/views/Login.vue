@@ -17,13 +17,13 @@
        placeholder="password"
        v-model="createPW"  
        />
-       
-      <button  type="handleSubmit">Login</button> 
       
+      <button  type="handleSubmit">Login</button> 
+     
         </form>
     </div>
     <div className="login" v-if="loggedin">
-       <h3>WHERES THE USER</h3>
+      
        
 </div>
 </div>
@@ -32,7 +32,9 @@
 
 
 <script>
-    export default {
+import Routines from './Routines'
+
+export default {
     name: 'Login',
     data() {
         return {
