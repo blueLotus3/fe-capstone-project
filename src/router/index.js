@@ -31,6 +31,7 @@ const routes = [
     component: Routines
 
 },
+
 ]
 
 const router = new VueRouter({

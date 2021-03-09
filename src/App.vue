@@ -11,15 +11,17 @@
 </template>
 
 <script>
-import axios from "axios"
+import Routines from './views/Routines'
 
 
 
 export default {
   name: 'App',
   components: {
- 
+    Routines,
+    
   },
+  
 
 }
 </script>
