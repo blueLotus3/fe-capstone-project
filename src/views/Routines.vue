@@ -120,8 +120,31 @@ button:hover {
 h1 {
     text-align: center;
 }
-li {
-    margin-left: 2em;
+ul {
+    margin-right: 2em;
+    list-style-type: none;
 }
-
+li {
+  display: block;
+  border: .1em solid coral;
+  padding-left: 2em;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  animation: fadeIn 0.5s linear;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: 6.25em;
+  }
+  75% {
+    opacity: 0.5;
+    top: 0em;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>
