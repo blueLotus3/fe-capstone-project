@@ -10,20 +10,20 @@
         type="text"
         name="username"
         placeholder="username"
-        v-model="createUN"
+        v-model="loginUN"
         />
        <input
        className="login-input"
        type="text"
        name="password"
        placeholder="password"
-       v-model="createPW"  
+       v-model="loginPW"  
        />
       
-      <button  type="handleSubmit">Login</button> 
+      <button type="handleSubmit"><router-link to="routines">Login</router-link></button> 
           </form>
     </div>
-    <div className="login" v-if="loggedin">
+    <div className="login" v-if="loggedin" to="/routines">
     
        
 </div>
@@ -70,15 +70,13 @@ export default {
         this.user = data.user
         this.token = data.token
         this.loggedin = true
-        this.loginPW= ''
-        this.loginUN = ''
+        this.loginPW= ""
+        this.loginUN = ""
         localStorage.setItem('jwt', data.token)
        
       })
-  
+      },
       
-      
-    }
   }
 }
 

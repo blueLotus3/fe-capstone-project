@@ -67,13 +67,8 @@ export default {
         toggleVisibility() {
             this.isVisible = !this.isVisible
         },
-        mutations: {},
-        actions: {},
-        getters: {
-            
+ 
         }
-   
-     }
 }
 </script>
 

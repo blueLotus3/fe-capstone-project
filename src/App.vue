@@ -2,11 +2,11 @@
   <div id="app">
     
     <div id="nav">
-      <Reveal closeOnNavigation="true">
-    <router-link to="/login">Login</router-link>
+      <Slide :closeOnNavigation="true">
+    <router-link to="/">Login</router-link>
     <router-link to="/reg">Registration</router-link>
     <router-link to="/routines">Routines</router-link>
-      </Reveal>
+      </Slide>
     </div>
     
       <router-view />
@@ -15,7 +15,7 @@
 
 <script>
 import Routines from './views/Routines'
-import { Reveal } from 'vue-burger-menu'
+import { Slide } from 'vue-burger-menu'
 
 
 
@@ -23,7 +23,7 @@ export default {
   name: 'App',
   components: {
     Routines,
-    Reveal,
+    Slide,
     },
 
 
