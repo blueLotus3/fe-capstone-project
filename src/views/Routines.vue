@@ -108,6 +108,7 @@ button{
     align-items: center;
     justify-content: center;
     background-color: cyan;
+    margin-left:3.3em;
 }
 
 
@@ -118,6 +119,9 @@ button:hover {
 
 h1 {
     text-align: center;
+}
+li {
+    margin-left: 2em;
 }
 
 </style>
