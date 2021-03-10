@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Header from '../views/Header.vue'
 import Login from '../views/Login.vue'
 import Reg from '../views/Reg'
 import Routines from '../views/Routines'
@@ -11,8 +10,8 @@ Vue.use(VueRouter);
 const routes = [
 {
     path: "/",
-    name: "Header",
-    component: Header
+    name: "Login",
+    component: Login
 
 },
 {

@@ -116,4 +116,8 @@ button:hover {
     
     }
 
+h1 {
+    text-align: center;
+}
+
 </style>

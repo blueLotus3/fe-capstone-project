@@ -101,6 +101,7 @@ button{
     align-items: center;
     justify-content: center;
     background-color: cyan;
+    
 }
 
 
@@ -123,7 +124,9 @@ input {
 	width: 12.5em;
 }
 p {
+  
   font-size: 3em;
+ 
 }
 </style>
 
