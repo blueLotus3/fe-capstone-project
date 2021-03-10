@@ -2,7 +2,7 @@
   <div id="app">
     
     <div id="nav">
-      <Reveal closeOnNavigation=true>
+      <Reveal closeOnNavigation="true">
     <router-link to="/login">Login</router-link>
     <router-link to="/reg">Registration</router-link>
     <router-link to="/routines">Routines</router-link>

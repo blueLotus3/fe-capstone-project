@@ -21,11 +21,10 @@
        />
       
       <button  type="handleSubmit">Login</button> 
-     
-        </form>
+          </form>
     </div>
     <div className="login" v-if="loggedin">
-      
+    
        
 </div>
 </div>
@@ -44,6 +43,8 @@ export default {
             JWT: "",
             createUN: "",
             createPW: "",
+            loginUN: "",
+            loginPW: "",
             devURL: "https://fitness-tracker-tl.herokuapp.com/",
             prodURL: null,
             user: null,
@@ -55,7 +56,7 @@ export default {
       event.preventDefault()
       const URL = this.prodURL ? this.prodURL : this.devURL
       console.log(URL)
-      const user = {username: this.createUN, password: this.createPW}
+      const user = {username: this.loginUN, password: this.loginPW}
       console.log(user)
         fetch(`${URL}/login`, {
         method: "POST",
@@ -69,10 +70,12 @@ export default {
         this.user = data.user
         this.token = data.token
         this.loggedin = true
+        this.loginPW= ''
+        this.loginUN = ''
         localStorage.setItem('jwt', data.token)
        
       })
-
+  
       
       
     }
@@ -124,7 +127,7 @@ input {
 	width: 12.5em;
 }
 p {
-  
+
   font-size: 3em;
  
 }
