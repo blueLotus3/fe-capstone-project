@@ -1,4 +1,6 @@
 <template>
+<div className="title">
+  <p>Fitness<br>Guardian</p>
 <div className="nologin" v-if="!loggedin">
 <div className="login">
    <form @submit.prevent="handleSubmit">
@@ -27,7 +29,7 @@
        
 </div>
 </div>
-
+</div>
 </template>
 
 
@@ -82,7 +84,7 @@ export default {
 <style scoped>
 button{
     color:white;
-    font-size: 16px;
+    font-size: 1em;
     border: 0.3em solid;
     border-radius: 2em;
     width: 12em;
@@ -103,10 +105,25 @@ button{
 
 
 button:hover {
-    color: black;
-    
-    }
-
-
+    color: black;    
+}
+form {
+ 	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 3.2em;
+	height: 100%;
+	text-align: center;
+}
+input {
+	border: none;
+	padding: 1.2em .9em;
+	margin: .5em 0;
+	width: 12.5em;
+}
+p {
+  font-size: 3em;
+}
 </style>
 

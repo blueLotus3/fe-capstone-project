@@ -2,7 +2,6 @@
   <div id="app">
     
     <div id="nav">
-    <router-link to="/">Header</router-link>
     <router-link to="/login">Login</router-link>
     <router-link to="/reg">Registration</router-link>
     <router-link to="/routines">Routines</router-link>
@@ -35,15 +34,9 @@ export default {
   -moz-background-size:cover;
   -o-background-size:cover;
   background-size:cover;
-  height: 1500px;
+  height: 93.7em;
 }
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  
-}
+
 
 
 </style>

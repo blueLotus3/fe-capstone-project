@@ -95,6 +95,47 @@ button:hover {
     color: black;
     
     }
+button{
+    color:white;
+    font-size: 1em;
+    border: 0.3em solid;
+    border-radius: 2em;
+    width: 12em;
+    height: 3em;       
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;  
+    transition: 0.5s;
+    margin: 1em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cyan;
+}
 
+
+button:hover {
+    color: black;    
+}
+form {
+ 	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 3.2em;
+	height: 100%;
+	text-align: center;
+    
+}
+input {
+	border: none;
+	padding: 1.2em .9em;
+	margin: .5em 0;
+	width: 12.5em;
+    
+}
 
 </style>
