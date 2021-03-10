@@ -69,7 +69,32 @@
 </script>
 
 <style scoped>
+button{
+    color:white;
+    font-size: 16px;
+    border: 0.3em solid;
+    border-radius: 2em;
+    width: 12em;
+    height: 3em;       
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;  
+    transition: 0.5s;
+    margin: 1em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cyan;
+}
 
+
+button:hover {
+    color: black;
+    
+    }
 
 
 </style>
