@@ -6,6 +6,7 @@
     <router-link to="/">Login</router-link>
     <router-link to="/reg">Registration</router-link>
     <router-link to="/routines">Routines</router-link>
+    <router-link to="/moves">Moves</router-link>
       </Slide>
     </div>
     
@@ -16,7 +17,7 @@
 <script>
 import Routines from './views/Routines'
 import { Slide } from 'vue-burger-menu'
-
+import store from './components/store'
 
 
 export default {
@@ -24,6 +25,7 @@ export default {
   components: {
     Routines,
     Slide,
+    store,
     },
 
 

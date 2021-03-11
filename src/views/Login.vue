@@ -2,7 +2,7 @@
 <div className="title">
   <p>Fitness<br>Guardian</p>
 <div className="nologin" v-if="!loggedin">
-<div className="login">
+<div className="login-form">
    <form @submit.prevent="handleSubmit">
      
        <input
@@ -20,13 +20,14 @@
        v-model="loginPW"  
        />
       
-      <button type="handleSubmit"><router-link to="routines">Login</router-link></button> 
+      <button type="handleSubmit">Login</button> 
           </form>
     </div>
+  </div>
     <div className="login" v-if="loggedin" to="/routines">
-    
-       
-</div>
+    <h3>this is user area</h3>
+       <button v-on:click="handleLogout">Logout</button>
+
 </div>
 </div>
 </template>
@@ -38,6 +39,7 @@ import Routines from './Routines'
 export default {
     name: 'Login',
     data() {
+      //credit to alex merced and his youtube videos on vue authentication.
         return {
             loggedin: false,
             JWT: "",
@@ -72,11 +74,15 @@ export default {
         this.loggedin = true
         this.loginPW= ""
         this.loginUN = ""
-        localStorage.setItem('jwt', data.token)
+        localStorage.setItem('JWT', data.token)
        
       })
       },
-      
+      handleLogout: function(){
+        this.loggedin=false
+        this.user=null
+        this.token=null
+      }
   }
 }
 

@@ -3,7 +3,7 @@
         <h1>Hello, User</h1>
     <div className="exercises-data">
     <button className="routine-button" v-on:click="toggleVisibility">Create Routine</button>
-    <ul className="exercises-list" v-show="isVisible">        
+    <ul className="exercises-list" v-show="isVisible" @mouseover="hover = true" mouseleave="hover= false">
         <li>{{exercises.results[0].name}}</li>    
         <li>{{exercises.results[1].name}}</li>
         <li>{{exercises.results[2].name}}</li>
@@ -28,7 +28,9 @@
         </ul>    
     </div>
     <div className="savedRoutines"> 
-        <h3>this is saved routines</h3><hr>
+       <div className="square">
+           
+       </div>
                
     </div>
     </div>
@@ -43,19 +45,26 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import Vuex from 'vuex'
 import Login from './Login'
+import Moves from './Moves'
 
-
-Vue.use(VueAxios,Vuex,axios)
+Vue.use(VueAxios,axios)
 export default {
     name: 'Routines',
+    components: {
+        Login,
+        Moves,
+    },
     data() {
         return {
-            exercises: {},
+            exercises: [],
             isVisible: false,
-            
-        }
+            hover: false,
+            user: {
+                username: null,
+                password: null,
+            }
+            }        
     },
     mounted() {
         const {SECRET_ENV} = process.env
@@ -84,9 +93,11 @@ routines {
 	height: 100%;
 	text-align: center;
 }
+
+
 button{
     color:white;
-    font-size: 16px;
+    font-size: 1em;
     border: 0.3em solid;
     border-radius: 2em;
     width: 12em;
@@ -121,7 +132,7 @@ ul {
 }
 li {
   display: block;
-  border: .1em solid coral;
+  border: .1em solid white;
   padding-left: 2em;
   padding: 1em;
   text-align: center;

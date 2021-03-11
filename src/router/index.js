@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Reg from '../views/Reg'
 import Routines from '../views/Routines'
-
+import Moves from '../views/Moves'
 
 Vue.use(VueRouter);
 
@@ -24,6 +24,11 @@ const routes = [
     component: Routines
 
 },
+{
+    path: "/moves",
+    name: "Moves",
+    component: Moves
+}
 
 ]
 
