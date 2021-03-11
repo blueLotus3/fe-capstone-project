@@ -93,8 +93,8 @@ button{
     color:white;
     font-size: 1em;
     border: 0.3em solid;
-    border-radius: 2em;
-    width: 12em;
+    border-radius: 3em;
+    width: 10em;
     height: 3em;       
     font-family: sans-serif;
     letter-spacing: 0.1em;
@@ -192,6 +192,7 @@ p {
   font-size: 3em;
  
 }
+
 
 h3{
   text-align: center;
