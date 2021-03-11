@@ -1,6 +1,6 @@
 <template>
     <div className="routines">
-        <h1>Hello, User</h1>
+        <h1>Hello, {{user.username}}</h1>
     <div className="exercises-data">
     <button className="routine-button" v-on:click="toggleVisibility">Create Routine</button>
     <ul className="exercises-list" v-show="isVisible" @mouseover="hover = true" mouseleave="hover= false">

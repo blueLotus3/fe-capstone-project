@@ -25,7 +25,7 @@
     </div>
   </div>
     <div className="login" v-if="loggedin" to="/routines">
-    <h3>this is user area</h3>
+    <h3>Welcome, {{user.username}}</h3>
        <button v-on:click="handleLogout">Logout</button>
 
 </div>
@@ -34,7 +34,7 @@
 
 
 <script>
-import Routines from './Routines'
+
 
 export default {
     name: 'Login',

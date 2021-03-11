@@ -1,100 +1,87 @@
 <template>
 <div className="reg">
-   <form @submit.prevent="handleSubmit">
+  <p>Please<br>Register</p>
+
+<div className="signup-form">
+   <form @submit.prevent="handleSignup">
+     
        <input
-        className="login-input"
+        className="sign-up"
         type="text"
         name="username"
         placeholder="username"
-        v-model="username"
+        v-model="createUN"
         />
        <input
-       className="login-input"
+       className="sign-up"
        type="text"
        name="password"
        placeholder="password"
-       model="password"  
+       v-model="createPW"  
        />
-        <input
-       className="login-input"
-       type="text"
-       name="confirm-password"
-       placeholder="confirm password"
-       model="confirm_password"  
-       />
-     <button className="login-button">Register</button>
-       
-   </form>
+      
+      <button type="handleSignup">Signup</button> 
+          </form>
+    </div>
+ 
 </div>
 </template>
 
 
 <script>
-    import axios from 'axios'
 
 
-    export default {
-    name: 'Register',
+export default {
+    name: 'Reg',
     data() {
+      //credit to alex merced and his youtube videos on vue authentication.
         return {
-            username: '',
-            password: '',
-            password_confirm: ''
+            loggedin: false,
+            JWT: "",
+            createUN: "",
+            createPW: "",           
+            devURL: "https://fitness-tracker-tl.herokuapp.com/",
+            prodURL: null,
+            user: null,
+            token: null
         }
     },
     methods: {
-    handleSubmit(e){
-        const data = {
-            username: this.username,
-            password: this.password,
-            password_confirm: this.password_confirm
-        }
-       
-        axios.post('http://localhost:3000/login', data)
-        .then(
-            res => {
-                console.log(res)
-            }
 
-        ).catch(
-            err => {
-                console.log(err)
-            }
-        )        
-        }
+      handleSignup: function(){
+          const URL = this.prodURL ? this.prodURL : this.devURL
+          const user = JSON.stringify ({username: this.createUN, password: this.createPW})
 
-    }
+          fetch(`${URL}/users`, {
+              method: "post",
+              header: {
+                  "Content-Type": "application/json"
+              },
+              body: user,
+          })
+          .then((response) => response.json())
+          .then(data => {
+                 if (data.error){
+              alert('error logging in')
+          }else {
+        this.user = data.user
+        this.token = data.token
+        this.loginUN= ""
+        this.loginPW= ""
+        this.loggedin = true
+        this.createPW= ""
+        this.createUN = ""
+        localStorage.setItem('JWT', data.token)
+          }
+           
+          })
+      }
+  }
 }
 
 </script>
 
 <style scoped>
-button{
-    color:white;
-    font-size: 16px;
-    border: 0.3em solid;
-    border-radius: 2em;
-    width: 12em;
-    height: 3em;       
-    font-family: sans-serif;
-    letter-spacing: 0.1em;
-    text-align: center;
-    line-height: 3em;
-    position: relative;  
-    transition: 0.5s;
-    margin: 1em;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: cyan;
-}
-
-
-button:hover {
-    color: black;
-    
-    }
 button{
     color:white;
     font-size: 1em;
@@ -114,6 +101,7 @@ button{
     align-items: center;
     justify-content: center;
     background-color: cyan;
+    
 }
 
 
@@ -128,14 +116,17 @@ form {
 	padding: 0 3.2em;
 	height: 100%;
 	text-align: center;
-    
 }
 input {
 	border: none;
 	padding: 1.2em .9em;
 	margin: .5em 0;
 	width: 12.5em;
-    
 }
+p {
 
+  font-size: 3em;
+ 
+}
 </style>
+
