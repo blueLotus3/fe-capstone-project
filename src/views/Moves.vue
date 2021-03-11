@@ -4,7 +4,7 @@
             <button className="routine-button" v-on:click="toggleVisibility">More Routines</button>
          <ul v-show="isVisible">
              <li v-for="(move) in moves" v-bind:key="move.name">
-                 <p><button @click="addToList">{{move.name}}</button></p>
+                 <p @click="addToList">{{move.name}}</p>
              </li>
          </ul>
          <div className="ExerciseList" :ExerciseList="$store.state.ExerciseList">
