@@ -119,6 +119,7 @@ form {
 }
 input {
 	border: none;
+    border-radius: 2em;
 	padding: 1.2em .9em;
 	margin: .5em 0;
 	width: 12.5em;
@@ -127,6 +128,65 @@ p {
 
   font-size: 3em;
  
+}
+@media screen and (min-width: 1024px) {
+  button{
+    color:white;
+    font-size: 1em;
+    border: 0.3em solid;
+    border-radius: 2em;
+    width: 20em;
+    height: 3em;       
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;  
+    transition: 0.5s;
+    margin: 1em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cyan;
+    
+}
+
+
+button:hover {
+    color: black;    
+}
+form {
+ 	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 3.2em;
+	height: 100%;
+	text-align: center;
+}
+input {
+	border: none;
+  border-radius: 2em;
+	padding: 1.2em .9em;
+	margin: .5em 0;
+	width: 24em;
+}
+p {
+
+  font-size: 3em;
+ 
+}
+
+h3{
+  text-align: center;
+  text-transform: capitalize;
+      font-size: 5.6rem;
+    text-align: center;
+    line-height: 1;
+    color: #c6e2ff;
+    animation: neon .08s ease-in-out infinite alternate;
+}
 }
 </style>
 
