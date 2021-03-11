@@ -3,7 +3,7 @@
         <h1>Hello, {{user.username}}</h1>
     <div className="exercises-data">
     <button className="routine-button" v-on:click="toggleVisibility">Create Routine</button>
-    <ul className="exercises-list" v-show="isVisible" @mouseover="hover = true" mouseleave="hover= false">
+    <ul className="exercises-list" v-show="isVisible" >
         <li>{{exercises.results[0].name}}</li>    
         <li>{{exercises.results[1].name}}</li>
         <li>{{exercises.results[2].name}}</li>
