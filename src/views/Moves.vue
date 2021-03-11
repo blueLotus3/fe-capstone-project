@@ -4,9 +4,13 @@
             <button className="routine-button" v-on:click="toggleVisibility">More Routines</button>
          <ul v-show="isVisible">
              <li v-for="(move) in moves" v-bind:key="move.name">
-                 <p>{{move.name}}</p>
+                 <p><button @click="addToList">{{move.name}}</button></p>
              </li>
          </ul>
+         <div className="ExerciseList" :ExerciseList="$store.state.ExerciseList">
+                    <hr>
+             <button>Remove</button>
+         </div>
         </div>
     </header>
 </template>
@@ -102,8 +106,17 @@ data: () => {
             name: "Cleans"
         },
     ],
+    ExerciseList: [],
     isVisible: false,
     } 
+    },
+    computed: {
+        ExerciseList() {
+            return this.$store.state.ExerciseList
+        },
+        moves() {
+            return this.$store.state.moves
+        }
     },
     
     methods: {
@@ -111,7 +124,7 @@ data: () => {
             this.isVisible = !this.isVisible
         },
         addToList(id) {
-            this.$store.dispatch("addToList", id)
+            this.$store.dispatch("addToList",id)
         },
         setMoves(state,moves) {
             state.moves = moves

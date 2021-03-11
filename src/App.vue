@@ -41,7 +41,7 @@ export default {
   -moz-background-size:cover;
   -o-background-size:cover;
   background-size:cover;
-  height: 93.7em;
+  height: 200.7em;
   padding: 5em;
 }
   .bm-menu {

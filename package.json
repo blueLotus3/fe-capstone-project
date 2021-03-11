@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "babel-preset-env": "^1.7.0",
     "uuid": "^8.3.2",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.4",
